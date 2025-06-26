@@ -15,7 +15,7 @@ function UserContext({ children }) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  
+
   function handleAddToCart(product) {
     if (productAlreadyExists(product.id)) {
       setCart(
@@ -47,7 +47,6 @@ function UserContext({ children }) {
             ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
             : item
         )
-        .filter((item) => item.quantity > 0)
     );
   }
   function productAlreadyExists(isToFind) {
